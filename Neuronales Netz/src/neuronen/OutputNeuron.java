@@ -15,7 +15,8 @@ public class OutputNeuron extends Neuron {
 public void coputeOutput() {
      float sum=(float) 0.0;
      for (int i=0; i< connections.size(); i++) {
-         sum +=((Connection)connections.get(i)).getWeight();
+         float input = ((Neuron)((Connection)connections.get(i)).getBefore()).getValue(); 
+         sum +=((Connection)connections.get(i)).getWeight() * input;
      }
      setValue(activate(sum));        
  }
@@ -23,10 +24,11 @@ public void coputeOutput() {
 public void changeWeights( float soll )
 {
     float delta = soll - getValue();
-   // System.out.println("Delta = " + delta);
+    //System.out.println("Delta = " + delta);
     for (int i=0; i< connections.size(); i++) {
         float oldweight=((Connection)connections.get(i)).getWeight();
-        ((Connection)connections.get(i)).setWeight(oldweight + ( 0.1f* delta ));
+        ((Connection)connections.get(i)).setWeight(oldweight + ( 0.001f* delta ));
+        //System.out.println("Anpassung = "+ (( 0.01f* delta )));
     }
 }
 

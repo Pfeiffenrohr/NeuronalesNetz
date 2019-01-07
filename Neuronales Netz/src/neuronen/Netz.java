@@ -44,7 +44,7 @@ public class Netz {
     
  public void setInputValues(float ...values ) {
         
-           System.out.println("Set inputValues ..");
+           //System.out.println("Set inputValues ..");
            for (int i=0; i<inputs.size(); i++)
            {            
                ((InputNeuron)inputs.get(i)).setValue(values[i]);
