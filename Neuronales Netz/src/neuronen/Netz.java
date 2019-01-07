@@ -84,7 +84,7 @@ public class Netz {
     {
         for (int i=0; i<outputs.size();i++)
         {
-            ((OutputNeuron)outputs.get(i)).coputeOutput();
+            ((OutputNeuron)outputs.get(i)).computeOutput();
         }
     }
     
