@@ -4,6 +4,13 @@ package neuronen;
 public class Connection {
     
    private float weight ;
+   private  Neuron before;
+   private  Neuron next;
+   
+   public Connection() {
+       float weight = (float) Math.random();
+       this.weight=weight;
+   }
    
 public float getWeight() {
     return weight;
@@ -28,8 +35,6 @@ public Neuron getNext() {
 public void setNext(Neuron next) {
     this.next = next;
 }
-private  Neuron before;
-   private  Neuron next;
-    
-    
+
+        
 }
